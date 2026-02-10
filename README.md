@@ -67,20 +67,31 @@ Work through the modules in order for the best learning experience:
 
 ## 🚀 Getting Started
 
-### 1. Clone the Repository
+### Option 1: Google Colab (Recommended) 🎯
+**Perfect if you don't have an NVIDIA GPU! Free T4 GPU access.**
+
+1. Click here → **[Open Introduction Notebook in Colab](https://colab.research.google.com/github/erickummelstedt/rfdiffusion_tutorial/blob/main/01_rfdiffusion_original/notebooks/01_introduction.ipynb)**
+2. Enable GPU: `Runtime` → `Change runtime type` → Select `T4 GPU`
+3. Run the Colab setup cell at the top of the notebook
+4. Start learning! 🚀
+
+📚 See [**Colab Setup Guide**](docs/COLAB_SETUP.md) for detailed instructions, tips, and troubleshooting.
+
+### Option 2: Local Setup (macOS/Linux)
+
+#### 1. Clone the Repository
 ```bash
 git clone https://github.com/erickummelstedt/rfdiffusion_tutorial.git
 cd rfdiffusion_tutorial
 ```
 
-### 2. Set Up Environment
+#### 2. Set Up Environment
 
-#### Option A: Conda (Recommended)
-Best for scientific computing with PyTorch, CUDA, and complex dependencies:
+**Using Conda (Recommended)**:
 
 ```bash
-# Create conda environment from environment.yml
-conda env create -f environment.yml
+# Create conda environment from simplified environment file
+conda env create -f environment_simple.yml
 
 # Activate the environment
 conda activate rfdiffusion_tutorial
@@ -89,38 +100,19 @@ conda activate rfdiffusion_tutorial
 pip install -e .
 
 # Verify installation
-python -c "import torch; print(f'PyTorch: {torch.__version__}'); print(f'CUDA: {torch.cuda.is_available()}')"
+python -c "import torch; print(f'PyTorch: {torch.__version__}')"
+python -c "from shared_utils import structure_utils; print('✅ Setup complete!')"
 ```
 
-#### Option B: Python venv
-For a lighter setup using standard Python virtual environments:
+**Note**: Local setup works with CPU or MPS (Apple Silicon). For GPU training, use Google Colab.
 
-```bash
-# Create virtual environment
-python -m venv .venv
-
-# Activate (macOS/Linux)
-source .venv/bin/activate
-# Or on Windows: .venv\Scripts\activate
-
-# Upgrade pip and install dependencies
-pip install --upgrade pip
-pip install -r requirements.txt
-
-# Install the package in editable mode
-pip install -e .
-```
-
-**Note**: The `.venv` directory is already in `.gitignore`
-
-### 3. Start Learning
+#### 3. Start Learning (Local)
 ```bash
 # Navigate to the first module
 cd 01_rfdiffusion_original
 
 # Launch Jupyter
 jupyter lab
-# Or: jupyter notebook
 
 # Open: notebooks/01_introduction.ipynb
 ```

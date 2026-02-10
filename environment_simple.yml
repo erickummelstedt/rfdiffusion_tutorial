@@ -1,0 +1,36 @@
+name: rfdiffusion_tutorial
+channels:
+  - conda-forge
+  - pytorch
+  - defaults
+
+dependencies:
+  - python=3.10
+  - pip
+  
+  # Core packages
+  - pytorch
+  - torchvision
+  - numpy
+  - pandas
+  - scipy
+  - matplotlib
+  - seaborn
+  - biopython
+  - jupyter
+  - jupyterlab
+  - ipywidgets
+  - tqdm
+  - pyyaml
+  - requests
+  - pytest
+  - black
+  - flake8
+  
+  # Pip packages
+  - pip:
+    - biotite
+    - py3Dmol
+    - plotly
+    - einops
+    - pytest-cov
