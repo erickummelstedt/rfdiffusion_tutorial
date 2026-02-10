@@ -9,10 +9,9 @@ dependencies:
   - python=3.10
   - pip>=23.0
   
-  # Deep Learning
+  # Deep Learning (macOS compatible - no CUDA)
   - pytorch>=2.0.0
   - torchvision>=0.15.0
-  - cudatoolkit=11.8  # Adjust based on your GPU
   
   # Scientific Computing
   - numpy>=1.24.0

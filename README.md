@@ -69,25 +69,60 @@ Work through the modules in order for the best learning experience:
 
 ### 1. Clone the Repository
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/erickummelstedt/rfdiffusion_tutorial.git
 cd rfdiffusion_tutorial
 ```
 
 ### 2. Set Up Environment
+
+#### Option A: Conda (Recommended)
+Best for scientific computing with PyTorch, CUDA, and complex dependencies:
+
 ```bash
-# Create conda environment
+# Create conda environment from environment.yml
 conda env create -f environment.yml
+
+# Activate the environment
 conda activate rfdiffusion_tutorial
 
-# Or use pip
-pip install -r requirements.txt
+# Install the package in editable mode
+pip install -e .
+
+# Verify installation
+python -c "import torch; print(f'PyTorch: {torch.__version__}'); print(f'CUDA: {torch.cuda.is_available()}')"
 ```
+
+#### Option B: Python venv
+For a lighter setup using standard Python virtual environments:
+
+```bash
+# Create virtual environment
+python -m venv .venv
+
+# Activate (macOS/Linux)
+source .venv/bin/activate
+# Or on Windows: .venv\Scripts\activate
+
+# Upgrade pip and install dependencies
+pip install --upgrade pip
+pip install -r requirements.txt
+
+# Install the package in editable mode
+pip install -e .
+```
+
+**Note**: The `.venv` directory is already in `.gitignore`
 
 ### 3. Start Learning
 ```bash
 # Navigate to the first module
 cd 01_rfdiffusion_original
-jupyter notebook
+
+# Launch Jupyter
+jupyter lab
+# Or: jupyter notebook
+
+# Open: notebooks/01_introduction.ipynb
 ```
 
 ## 📁 Repository Structure
